@@ -1,4 +1,4 @@
-# Simple Stock Info
+# Simple Stock Recommender
 
 # Description:
 To build a stock recommender based on lowest price and social media buy/sell information.
