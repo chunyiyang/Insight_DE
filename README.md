@@ -1,25 +1,18 @@
-# Insight_DE
+# Simple Stock Info
 
 # Description:
-To build a realtime data pipeline for huge voice file.
+To build a stock recommender based on lowest price and social media buy/sell information.
 
-# Dataset:
-* log file that includes voice file id, call number, call start time, call end time, business category, location
-* voice file
-Total size: several hundreds GB
+# Background:
+There is so much information that it's always difficult for people with less financial knowledge to make decision which stock to invest on. 
 
-# Current Situation:
-Voice recognition algorithm can only be run on a very small amount of data. Need to manually update the model and no realtime response.
+# Input:
+* Realtime stock price data stream
+* Realtime friends buy/sell stock information data stream
 
-# Target:
-Run the ML algorithm on a much larger dataset and integrate realtime dataprocessing.
-
-# Challenge:
-In some country, different areas have different accent. Need to categorize all the calls into different groups due to the area code.
-
-# Usecase:
-To improve the call center AI performance and to automatically update ML model.
+# Output:
+Dashboard with stocks list that is at the lowest price in past 52 weeks and how many friends purchase each stocks.
 
 # Architecture:
-SPARK , SPARK STREAMING, PostgreSQL
+Kafka, SPARK, PostgreSQL
 
