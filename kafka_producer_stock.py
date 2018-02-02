@@ -7,9 +7,7 @@ import datetime
 import random
 from kafka import KafkaProducer, KeyedProducer
 
-#ticker_list_path = "./ticker_name_list.csv"
 ticker_list_path = "./companylist.csv"
-
 
 def create_stock_list(filename):
     """ Open a csv file that lists up all the stock ticker symbols
@@ -50,21 +48,16 @@ def main():
   producer_user = (KafkaProducer(bootstrap_servers=ips, 
               value_serializer=lambda v: json.dumps(v).encode('utf-8')))
 
-  cur_time = datetime.datetime.now()
-  time_string = str(cur_time.year) + ":" + str(cur_time.month) + ":" + str(cur_time.day) + ":" + str(cur_time.minute) + ":" + str(cur_time.second)
   ticker_list = create_stock_list(ticker_list_path)
 
   while True:
     cur_time = datetime.datetime.now()
-    time_string = str(cur_time.year) + ":" + str(cur_time.month) + ":" + str(cur_time.day) + ":" + str(cur_time.minute) + ":" + str(cur_time.second)
+    time_string = str(cur_time.hour).zfill(2) + ":" + str(cur_time.minute).zfill(2) + ":" + str(cur_time.second).zfill(2)
     for ticker_name in ticker_list:
       stock_price = float(random.randint(20, 20000)/10)
       stock_record = {"ticker": ticker_name, "price": stock_price, "time": time_string}
-#      json.dump(stock_record, output_user_filename)
-#      d = yaml.safe_load(line)
-#      jd = json.dumps(d)
  
-        # send the messages to separate topics
+      # send the messages to separate topics
       producer_user.send(sys.argv[1], stock_record) 
     time.sleep(wait_time)     
 

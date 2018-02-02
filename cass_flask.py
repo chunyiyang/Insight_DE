@@ -55,11 +55,6 @@ def homepage():
     combined_rank = combined_rank.sort_values('para_rank')
     combined_rank = combined_rank.reset_index(drop=True)
     
-    stop = timeit.default_timer()
-    diff = stop - start
-    print ("*********************")
-    print (stop - start)
-
 
     return render_template("example.html", **locals())
              

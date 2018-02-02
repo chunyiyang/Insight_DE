@@ -9,153 +9,232 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous"> 
 
 
-</div>
-  <meta http-equiv="refresh" content="10">
+    </div>
+    <meta http-equiv="refresh" content="10">
   </head>
   <body>
   	<div style="margin-top:30px"></div>
     <h1><center><font size="20" color="MEDIUMPURPLE"> StockRank</font><center></h1>
       <div style="margin-top:30px"></div>
-	  <div class="btn-group-center" role="group" aria-label="" ><center>
-	  <button type="button" class="btn btn-info"> 0 </button>
-	  <button type="button" class="btn btn-info"> 1 </button>
-	  <button type="button" class="btn btn-info"> 2 </button>
-	  <button type="button" class="btn btn-info"> 3 </button>
-	  <button type="button" class="btn btn-info"> 4 </button>
-	  <button type="button" class="btn btn-info"> 5 </button>
-	  <button type="button" class="btn btn-info"> 6 </button>
-	  <button type="button" class="btn btn-info"> 7 </button>
-	  <button type="button" class="btn btn-info"> 8 </button>
-	  <button type="button" class="btn btn-info"> 9 </button>
-	  <button type="button" class="btn btn-info"> 10 </button><center>
-	  </div>
+	     <div class="btn-group-center" role="group" aria-label="" ><center>
+    	  <button type="button" class="btn btn-info"> 0 </button>
+    	  <button type="button" class="btn btn-info"> 1 </button>
+    	  <button type="button" class="btn btn-info"> 2 </button>
+    	  <button type="button" class="btn btn-info"> 3 </button>
+    	  <button type="button" class="btn btn-info"> 4 </button>
+    	  <button type="button" class="btn btn-info"> 5 </button>
+    	  <button type="button" class="btn btn-info"> 6 </button>
+    	  <button type="button" class="btn btn-info"> 7 </button>
+    	  <button type="button" class="btn btn-info"> 8 </button>
+    	  <button type="button" class="btn btn-info"> 9 </button>
+    	  <button type="button" class="btn btn-info"> 10 </button><center>
+	     </div>
     <div class="col-xs-6">
-    <div style="margin-top:30px"></div>
-    <div class="table-responsive col-md-6" style="float: left">
-    <table class="table table-striped table-dark" width="100" style="float: left" >
-    <thead >
-     <tr>
-      <th scope="col-md-1">Ranking</th>
-      <th scope="col-md-2">Ticker</th>
-      <th scope="col-md-2">Ratio</th>
-      <th scope="col-md-2">Price</th>
-      <th scope="col-md-2">Mean</th>
-     </tr>
-    </thead>
-    <tbody>
-     <tr>
-      <th scope="row">1</th>
-      <td>{{table_low_avg['ticker'][0]}}</td>
-      <td>{{table_low_avg['ratio'][0]}}</td>
-      <td>{{table_low_avg['low_price'][0]}}</td>
-      <td>{{table_low_avg['price'][0]}}</td>
-     </tr>
-     <tr>
-      <th scope="row">2</th>
-      <td>{{table_low_avg['ticker'][table_low_avg.index[1]]}}</td>
-      <td>{{table_low_avg['ratio'][table_low_avg.index[1]]}}</td>
-      <td>{{table_low_avg['low_price'][table_low_avg.index[1]]}}</td>
-      <td>{{table_low_avg['price'][table_low_avg.index[1]]}}</td>
+      <div style="margin-top:30px"></div>
+        <div class="table-responsive col-md-6" style="float: left">
+          <table class="table table-striped table-dark" width="100" style="float: left" >
+            <thead >
+             <tr>
+              <th scope="col-md-1">Ranking</th>
+              <th scope="col-md-2">Ticker</th>
+              <th scope="col-md-2">Ratio</th>
+              <th scope="col-md-2">Price</th>
+              <th scope="col-md-2">Mean</th>
+             </tr>
+            </thead>
+            <tbody>
+             <tr>
+              <th scope="row">1</th>
+              <td>{{table_low_avg['ticker'][0]}}</td>
+              <td>{{table_low_avg['ratio'][0]}}</td>
+              <td>{{table_low_avg['low_price'][0]}}</td>
+              <td>{{table_low_avg['price'][0]}}</td>
+             </tr>
+             <tr>
+              <th scope="row">2</th>
+              <td>{{table_low_avg['ticker'][table_low_avg.index[1]]}}</td>
+              <td>{{table_low_avg['ratio'][table_low_avg.index[1]]}}</td>
+              <td>{{table_low_avg['low_price'][table_low_avg.index[1]]}}</td>
+              <td>{{table_low_avg['price'][table_low_avg.index[1]]}}</td>
 
-     </tr>
-     <tr>
-      <th scope="row">3</th>
-      <td>{{table_low_avg['ticker'][table_low_avg.index[2]]}}</td>
-      <td>{{table_low_avg['ratio'][table_low_avg.index[2]]}}</td>
-      <td>{{table_low_avg['low_price'][table_low_avg.index[2]]}}</td>
-      <td>{{table_low_avg['price'][table_low_avg.index[2]]}}</td>
-     </tr>
-     <tr>
-      <th scope="row">4</th>
-      <td>{{table_low_avg['ticker'][3]}}</td>
-      <td>{{table_low_avg['ratio'][3]}}</td>
-      <td>{{table_low_avg['low_price'][3]}}</td>
-      <td>{{table_low_avg['price'][3]}}</td>
-     </tr>
-     <tr>
-      <th scope="row">5</th>
-      <td>{{table_low_avg['ticker'][4]}}</td>
-      <td>{{table_low_avg['ratio'][4]}}</td>
-      <td>{{table_low_avg['low_price'][4]}}</td>
-      <td>{{table_low_avg['price'][4]}}</td>
-     </tr>
+             </tr>
+             <tr>
+              <th scope="row">3</th>
+              <td>{{table_low_avg['ticker'][table_low_avg.index[2]]}}</td>
+              <td>{{table_low_avg['ratio'][table_low_avg.index[2]]}}</td>
+              <td>{{table_low_avg['low_price'][table_low_avg.index[2]]}}</td>
+              <td>{{table_low_avg['price'][table_low_avg.index[2]]}}</td>
+             </tr>
+             <tr>
+              <th scope="row">4</th>
+              <td>{{table_low_avg['ticker'][3]}}</td>
+              <td>{{table_low_avg['ratio'][3]}}</td>
+              <td>{{table_low_avg['low_price'][3]}}</td>
+              <td>{{table_low_avg['price'][3]}}</td>
+             </tr>
+             <tr>
+              <th scope="row">5</th>
+              <td>{{table_low_avg['ticker'][4]}}</td>
+              <td>{{table_low_avg['ratio'][4]}}</td>
+              <td>{{table_low_avg['low_price'][4]}}</td>
+              <td>{{table_low_avg['price'][4]}}</td>
+             </tr>
+             <tr>
+              <th scope="row">6</th>
+              <td>{{table_low_avg['ticker'][5]}}</td>
+              <td>{{table_low_avg['ratio'][5]}}</td>
+              <td>{{table_low_avg['low_price'][5]}}</td>
+              <td>{{table_low_avg['price'][5]}}</td>
+             </tr>
+             <tr>
+              <th scope="row">7</th>
+              <td>{{table_low_avg['ticker'][6]}}</td>
+              <td>{{table_low_avg['ratio'][6]}}</td>
+              <td>{{table_low_avg['low_price'][6]}}</td>
+              <td>{{table_low_avg['price'][6]}}</td>
+             </tr>
+             <tr>
+              <th scope="row">8</th>
+              <td>{{table_low_avg['ticker'][7]}}</td>
+              <td>{{table_low_avg['ratio'][7]}}</td>
+              <td>{{table_low_avg['low_price'][7]}}</td>
+              <td>{{table_low_avg['price'][7]}}</td>
+             </tr>
+             <tr>
+              <th scope="row">9</th>
+              <td>{{table_low_avg['ticker'][8]}}</td>
+              <td>{{table_low_avg['ratio'][8]}}</td>
+              <td>{{table_low_avg['low_price'][8]}}</td>
+              <td>{{table_low_avg['price'][8]}}</td>
+             </tr>
+             <tr>
+              <th scope="row">10</th>
+              <td>{{table_low_avg['ticker'][9]}}</td>
+              <td>{{table_low_avg['ratio'][9]}}</td>
+              <td>{{table_low_avg['low_price'][9]}}</td>
+              <td>{{table_low_avg['price'][9]}}</td>
+             </tr>
 
-    </tbody>
-   </table>
-   </div>
-    <div class="table-responsive col-md-3" style="float: left">
-
-    <table class="table table-striped table-dark" width="100" style="float: left">
-  <thead>
-    <tr>
-      <th scope="col-md-2">Ranking</th>
-      <th scope="col-md-2">Ticker</th>
-      <th scope="col-md-2">Qty</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>{{table_window_user['ticker'][0]}}</td>
-      <td>{{table_window_user['sum_qty'][0]}}</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>{{table_window_user['ticker'][1]}}</td>
-      <td>{{table_window_user['sum_qty'][1]}}</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>{{table_window_user['ticker'][2]}}</td>
-      <td>{{table_window_user['sum_qty'][2]}}</td>
-    </tr>
-    <tr>
-      <th scope="row">4</th>
-      <td>{{ ['ticker'][3]}}</td>
-      <td>{{table_window_user['sum_qty'][3]}}</td>
-    </tr>
-    <tr>
-      <th scope="row">5</th>
-      <td>{{table_window_user['ticker'][4]}}</td>
-      <td>{{table_window_user['sum_qty'][4]}}</td>
-    </tr>
-  </tbody>
-</table>
-</div>
+            </tbody>
+          </table>
+        </div>
+        <div class="table-responsive col-md-3" style="float: left">
+          <table class="table table-striped table-dark" width="100" style="float: left">
+          <thead>
+            <tr>
+              <th scope="col-md-2">Ranking</th>
+              <th scope="col-md-2">Ticker</th>
+              <th scope="col-md-2">Qty</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>{{table_window_user['ticker'][0]}}</td>
+              <td>{{table_window_user['sum_qty'][0]}}</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>{{table_window_user['ticker'][1]}}</td>
+              <td>{{table_window_user['sum_qty'][1]}}</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>{{table_window_user['ticker'][2]}}</td>
+              <td>{{table_window_user['sum_qty'][2]}}</td>
+            </tr>
+            <tr>
+              <th scope="row">4</th>
+              <td>{{table_window_user['ticker'][3]}}</td>
+              <td>{{table_window_user['sum_qty'][3]}}</td>
+            </tr>
+            <tr>
+              <th scope="row">5</th>
+              <td>{{table_window_user['ticker'][4]}}</td>
+              <td>{{table_window_user['sum_qty'][4]}}</td>
+            </tr>
+            <tr>
+              <th scope="row">6</th>
+              <td>{{table_window_user['ticker'][5]}}</td>
+              <td>{{table_window_user['sum_qty'][5]}}</td>
+            </tr>
+            <tr>
+              <th scope="row">7</th>
+              <td>{{table_window_user['ticker'][6]}}</td>
+              <td>{{table_window_user['sum_qty'][6]}}</td>
+            </tr>
+            <tr>
+              <th scope="row">8</th>
+              <td>{{table_window_user['ticker'][7]}}</td>
+              <td>{{table_window_user['sum_qty'][7]}}</td>
+            </tr>
+            <tr>
+              <th scope="row">9</th>
+              <td>{{table_window_user['ticker'][8]}}</td>
+              <td>{{table_window_user['sum_qty'][8]}}</td>
+            </tr>
+            <tr>
+              <th scope="row">10</th>
+              <td>{{table_window_user['ticker'][9]}}</td>
+              <td>{{table_window_user['sum_qty'][9]}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
         
-    <div class="table-responsive col-md-3" style="float: left">
-    <table class="table table-striped table-dark" style="float: left">
-  <thead>
-    <tr>
-      <th scope="col-md-2">Ranking</th>
-      <th scope="col-md-2">Ticker</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>{{combined_rank['ticker'][0]}}</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>{{combined_rank['ticker'][1]}}</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>{{combined_rank['ticker'][2]}}</td>
-    </tr>
-    <tr>
-      <th scope="row">4</th>
-      <td>{{combined_rank['ticker'][3]}}</td>
-    </tr>
-    <tr>
-      <th scope="row">5</th>
-      <td>{{combined_rank['ticker'][4]}}</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
+      <div class="table-responsive col-md-3" style="float: left">
+        <table class="table table-striped table-dark" style="float: left">
+        <thead>
+          <tr>
+            <th scope="col-md-2">Ranking</th>
+            <th scope="col-md-2">Ticker</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>{{combined_rank['ticker'][0]}}</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>{{combined_rank['ticker'][1]}}</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>{{combined_rank['ticker'][2]}}</td>
+          </tr>
+          <tr>
+            <th scope="row">4</th>
+            <td>{{combined_rank['ticker'][3]}}</td>
+          </tr>
+          <tr>
+            <th scope="row">5</th>
+            <td>{{combined_rank['ticker'][4]}}</td>
+          </tr>
+          <tr>
+            <th scope="row">6</th>
+            <td>{{combined_rank['ticker'][5]}}</td>
+          </tr>
+          <tr>
+            <th scope="row">7</th>
+            <td>{{combined_rank['ticker'][6]}}</td>
+          </tr>
+          <tr>
+            <th scope="row">8</th>
+            <td>{{combined_rank['ticker'][7]}}</td>
+          </tr>
+          <tr>
+            <th scope="row">9</th>
+            <td>{{combined_rank['ticker'][8]}}</td>
+          </tr>
+          <tr>
+            <th scope="row">10</th>
+            <td>{{combined_rank['ticker'][9]}}</td>
+          </tr>
+           </tbody>
+      </table>
+    </div>
+    </div>
     <!-- jQuery first, then Tether, then Bootstrap JS. -->
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>

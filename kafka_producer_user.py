@@ -8,7 +8,6 @@ import random
 
 from kafka import KafkaProducer, KeyedProducer
 
-#ticker_list_path = "./ticker_name_list.csv"
 ticker_list_path = "./companylist.csv"
 total_user_size = 10000
 max_buysell_qty = 10000
@@ -28,10 +27,6 @@ def create_stock_list(filename):
     myfile.close()    
     return ticker_list
 
-def simulate_stock_ticker():
-    """ To generate a ticker that has buy/sell stock action """
-    ticker_id = random.randint(0,ticker_size)
-    return ticker_id
 
 def simulate_action_user_list(total_user_size, action_user_size):
     """ To generate a user_id list that has buy/sell stock action """
@@ -66,33 +61,23 @@ def main():
   producer_user = (KafkaProducer(bootstrap_servers=ips, 
               value_serializer=lambda v: json.dumps(v).encode('utf-8')))
 
-  cur_time = datetime.datetime.now()
-  time_string = str(cur_time.year) + ":" + str(cur_time.month) + ":" + str(cur_time.day) + ":" + str(cur_time.minute) + ":" + str(cur_time.second)
   ticker_list = create_stock_list(ticker_list_path)
 
   # Read the file over and over and send the messages line by line
   
-  #while forever:
-  # Open file and send the messages line by line
   while True:
     action_user_size = random.randint(int(total_user_size / 1000),int(total_user_size / 100))
     action_user_list = simulate_action_user_list(total_user_size, action_user_size)
-    ticker_id = simulate_stock_ticker()
+#    ticker_id = simulate_stock_ticker()
     cur_time = datetime.datetime.now()
-    time_string = str(cur_time.year) + ":" + str(cur_time.month) + ":" + str(cur_time.day) + ":" + str(cur_time.minute) + ":" + str(cur_time.second)
+    time_string =  str(cur_time.hour).zfill(2) + ":" + str(cur_time.minute).zfill(2) + ":" + str(cur_time.second).zfill(2)
     
     for user_id in action_user_list:
+        ticker_id = random.randint(0, len(ticker_list) - 1)
         ticker_name = ticker_list[ticker_id]
         action = simulate_buysell_action()
         stk_qty = random.randint(1, max_buysell_qty)
-#       record = str(user_id) + "\t" + str(action) + "\t" + ticker_name + "\t" + str(stk_qty)  + "\n"
-#        user_record = {"user_action": {"uid": user_id, "action": action, "ticker": ticker_name, "qty":stk_qty, "time":time_string}}        
         user_record = {"uid": user_id, "action": action, "ticker": ticker_name, "qty":stk_qty, "time":time_string}
- #       json.dump(user_record, output_user_filename)
- #       d = yaml.safe_load(line)
- #       jd = json.dumps(d)
-
-        # send the messages to separate topics
         producer_user.send(sys.argv[1], user_record) 
     
     for ticker_name in ticker_list:
