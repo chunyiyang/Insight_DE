@@ -21,8 +21,11 @@ Dashboard with 3 realtime rank list.
 Table1: Stock rank that sorted by ratio of [current price]/[mean of past one year]
 Table2: Stock rank that shows trading popularity.
 Table3: Based on table 1 ranking and table 2 ranking.
+![alt text]https://github.com/chunyiyang/Insight_DE/blob/master/Images/app_UI.png
 
 
 # Pipeline:
 Kafka, Spark Streaming, Cassandra, Flask
+![alt text]https://github.com/chunyiyang/Insight_DE/blob/master/Images/Pipeline.png
+
 
