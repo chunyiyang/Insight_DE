@@ -7,8 +7,10 @@ if __name__ == '__main__':
 	session = cluster.connect('mykeyspace')
 
 #	Calculate daily average and update the year_stock_price table
-
+	start = timeit.default_timer()
 	rows = session.execute('SELECT ticker, avg(price) AS price FROM day_stock_price GROUP BY ticker;',timeout=None)
+	end = timeit.default_timer()
+	print(end - start)
 
 
 	cur_time = datetime.datetime.now()

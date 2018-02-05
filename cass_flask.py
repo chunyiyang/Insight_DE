@@ -8,13 +8,15 @@ app.debug=True
 @app.route('/')
 
 
+
+
 def homepage():
     start = timeit.default_timer()
     weight = 5
     def _pandas_factory(colnames, rows):
         return pd.DataFrame(rows, columns=colnames)
-    cluster = Cluster()
-    session = cluster.connect('mykeyspace')
+#    cluster = Cluster()
+#    session = cluster.connect('mykeyspace')
     session.row_factory = _pandas_factory
     session.default_fetch_size = None
     table_window_stock = session.execute('SELECT ticker, low_price FROM window_stock;')
@@ -59,6 +61,9 @@ def homepage():
     return render_template("example.html", **locals())
              
 if __name__ == '__main__':
+    cluster = Cluster()
+    session = cluster.connect('mykeyspace')
+    print("hello")
     app.run(host='0.0.0.0',debug=True, port=5000)  
 
 
