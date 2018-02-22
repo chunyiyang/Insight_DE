@@ -28,4 +28,12 @@ Table3: Based on table 1 ranking and table 2 ranking.
 Kafka, Spark Streaming, Cassandra, Flask
 ![alt text](./Images/Pipeline.png)
 
+# Slides:
+bit.ly/StockRankSlides
+
+# Demo link:
+https://drive.google.com/open?id=17GwobjLrO_Dr_XAHysw4gxKVjvU1F5-8
+
+
+
 
