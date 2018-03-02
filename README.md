@@ -15,6 +15,7 @@ How to select a suitable database.
 # Input:
 * Simulated realtime stock price 
 * Simulated realtime trading information data stream
+* throughput = 6000 ~ 8000 events/second 
 
 # Output:
 Dashboard with 3 realtime rank list. 
